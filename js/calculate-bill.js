@@ -1,5 +1,5 @@
 function calculateBtnClicked() {
-  var billStringElement = document.querySelector(".billString").value;
+  var billStringElement = document.querySelector(".billString").value.toLowerCase();
   const totalElement = document.querySelector(".billTotal");
 
   var billStrings = billStringElement.split(",");

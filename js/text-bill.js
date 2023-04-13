@@ -8,7 +8,7 @@ var callsTotal = 0;
 var smsTotal = 0;
 var totalCost = 0;
 function textBillTotal() {
-  var billTypeEntered = billTypeTextElement.value;
+  var billTypeEntered = billTypeTextElement.value.toLowerCase();
 
 
   if (billTypeEntered === "call") {
@@ -18,8 +18,8 @@ function textBillTotal() {
   else if (billTypeEntered === "sms") {
     smsTotal += 0.75;
   }
-  totalCost = callsTotal + smsTotal;
-
+ totalCost = callsTotal + smsTotal;
+ 
   if (totalCost >= 30 && totalCost < 50) {
     totalOneElement.classList.add("warning");
   }
