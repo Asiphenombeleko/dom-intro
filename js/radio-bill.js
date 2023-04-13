@@ -18,7 +18,7 @@ const totalTwoElement = document.querySelector(".totalTwo");
       } else if (billItemTypeRadio  === "sms") {
         smsTotal += 0.75;
       }
-    
+      totalCost = callsTotal + smsTotal;
     if (totalCost>=30 && totalCost<50){
      
           totalTwoElement.classList.add("warning")
@@ -32,7 +32,7 @@ const totalTwoElement = document.querySelector(".totalTwo");
   
     callTotalTwoElement.innerHTML = callsTotal.toFixed(2);
     smsTotalTwoElement.innerHTML = smsTotal.toFixed(2);
-     totalCost = callsTotal + smsTotal;
+     
     totalTwoElement.innerHTML = totalCost.toFixed(2);
   }
 }

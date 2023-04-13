@@ -24,9 +24,10 @@ function calculateBtnClicked() {
    totalElement.classList.add("danger")
 
   }
- /* else{
-    totalElement.classList.add("danger")
-  }*/
+  else {
+    totalElement.classList.remove("warning");
+    totalElement.classList.add("black");
+  }
   totalElement.innerHTML = billTotal.toFixed(2);
 
   
