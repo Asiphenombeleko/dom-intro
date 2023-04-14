@@ -1,5 +1,7 @@
 function calculateBtnClicked() {
-  var billStringElement = document.querySelector(".billString").value.toLowerCase();
+  var billStringElement = document
+    .querySelector(".billString")
+    .value.toLowerCase();
   const totalElement = document.querySelector(".billTotal");
 
   var billStrings = billStringElement.split(",");
@@ -14,26 +16,24 @@ function calculateBtnClicked() {
       billTotal += 2.75;
     }
   }
-  if(billTotal >=20 && billTotal < 30){
-    totalElement.classList.add("warning")
-
-  }
-
-  else if(billTotal >=30){
-    totalElement.classList.remove("warning")
-   totalElement.classList.add("danger")
-
-  }
-  else {
+  if (billTotal < 20 || billTotal === 0.0) {
     totalElement.classList.remove("warning");
-    totalElement.classList.add("black");
+    totalElement.classList.remove("danger");
+  }
+  if (billTotal >= 20 && billTotal < 30) {
+    totalElement.classList.add("warning");
+    totalElement.classList.remove("danger");
+  } else if (billTotal >= 30) {
+    totalElement.classList.remove("warning");
+    totalElement.classList.add("danger");
+  } else {
+    totalElement.classList.remove("danger");
+    totalElement.classList.remove("warning");
+
+    //  totalElement.classList.add("black");
   }
   totalElement.innerHTML = billTotal.toFixed(2);
-
-  
 }
-
-
 
 const calculateBtnElement = document.querySelector(".calculateBtn");
 

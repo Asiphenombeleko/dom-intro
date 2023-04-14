@@ -1,4 +1,11 @@
 // get a reference to the sms or call radio buttons
+ const billItemTypeWithSettingsElement = document.querySelector(".billItemTypeWithSettings");
+const primaryElement = document.querySelector(".primary");
+const callTotalSettingsElement = document.querySelector(".callTotalSettings");
+const smsTotalSettingsElement = document.querySelector(".smsTotalSettings");
+
+
+
 
 // get refences to all the settings fields
 

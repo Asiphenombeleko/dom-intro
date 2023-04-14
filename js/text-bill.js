@@ -30,7 +30,6 @@ function textBillTotal() {
 
   callTotalOneElement.innerHTML = callsTotal.toFixed(2);
   smsTotalOneElement.innerHTML = smsTotal.toFixed(2);
- 
   totalOneElement.innerHTML = totalCost.toFixed(2);
 }
 
