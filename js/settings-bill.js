@@ -32,7 +32,7 @@ var smsTotalThree = 0;
 var totalsThree = 0;
 
 function billItemTypeWithSettings() {
-//in the event listener get the value from the billItemTypeRadio radio buttons
+  //in the event listener get the value from the billItemTypeRadio radio buttons
   var checkedRadioBtn = document.querySelector(
     "input[name='billItemTypeWithSettings']:checked"
   );
@@ -49,7 +49,7 @@ function billItemTypeWithSettings() {
     //console.log(callsTotalThree)
     totalsThree = callsTotalThree + smsTotalThree;
 
-    updateLevels()
+    updateLevels();
 
     callTotalSettingsElement.innerHTML = callsTotalThree.toFixed(2);
     smsTotalSettingsElement.innerHTML = smsTotalThree.toFixed(2);
@@ -66,20 +66,22 @@ function updateClicked() {
   criticalLevel = criticalLevelSettingElement.value;
   warningLevel = warningLevelSettingElement.value;
 
-  updateLevels()
-
+  updateLevels();
 }
 
-function updateLevels(){
-    totalSettingsElement.classList.remove("warning");
-    totalSettingsElement.classList.remove("danger");
+function updateLevels() {
+  totalSettingsElement.classList.remove("warning");
+  totalSettingsElement.classList.remove("danger");
+  if (warningLevel > 0 && criticalLevel > 0) {
     if (totalsThree >= warningLevel && totalsThree < criticalLevel) {
-        totalSettingsElement.classList.remove("warning");
-        totalSettingsElement.classList.add("warning");
-      } else if (totalsThree >= criticalLevel) {
-        totalSettingsElement.classList.remove("warning");
-        totalSettingsElement.classList.add("danger");
-      }
+      totalSettingsElement.classList.remove("warning");
+      totalSettingsElement.classList.add("warning");
+    }
+    if (totalsThree >= criticalLevel) {
+      totalSettingsElement.classList.remove("warning");
+      totalSettingsElement.classList.add("danger");
+    }
+  }
 }
 
 updateSettingsElement.addEventListener("click", updateClicked);
